@@ -1,0 +1,15 @@
+:root { --container-w: 1100px; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f4f6f8;
+  color: #222;
+}
+.container {
+  width: 94%;
+  max-width: var(--container-w);
+  margin: 22px auto;
+  padding: 0 8px;
+}
+.muted { color: #666; }

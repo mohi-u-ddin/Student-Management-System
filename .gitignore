@@ -1,0 +1,21 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+*.log
+
+# IntelliJ
+.idea/
+*.iml
+
+# VSCode
+.vscode/
+
+# Node / React
+Frontend/node_modules/
+Frontend/build/
+
+# OS files
+.DS_Store
+Thumbs.db
