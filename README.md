@@ -58,6 +58,34 @@ PUT /students/{id} → Update student
 
 DELETE /students/{id} → Delete student
 
+Run the Backend
+
+Using Maven:
+
+mvn spring-boot:run
+
+
+Backend will start at  http://localhost:8080
+
+---Run the Frontend
+
+Navigate to the frontend folder:
+
+cd Frontend
+
+
+Install dependencies:
+
+npm install
+
+
+Start the frontend server:
+
+npm run dev
+
+
+Frontend will run at  http://localhost:3000
+
 --Author
 
 Mohi Ud Din
