@@ -1,21 +1,48 @@
-# Maven
+# Compiled Java / Maven
 target/
+bin/
+*.class
 !.mvn/wrapper/maven-wrapper.jar
 
-# Logs
-*.log
+# Eclipse
+.classpath
+.project
+.settings/
 
-# IntelliJ
+# IntelliJ IDEA / Qodana
 .idea/
 *.iml
+*.iws
+*.ipr
+out/
+qodana.yaml
+.qodana/
 
-# VSCode
+# VS Code
 .vscode/
 
-# Node / React
+# Node / Frontend
 Frontend/node_modules/
-Frontend/build/
+Frontend/dist/
+Frontend/dist-ssr/
 
-# OS files
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# Logs & Crash Dumps
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+hs_err_pid*
+replay_pid*
+
+# OS Files
 .DS_Store
 Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
