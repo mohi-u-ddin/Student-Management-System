@@ -1,91 +1,88 @@
-----Student Management Backend (Spring Boot + MySQL)---
+# Student Management System
 
-This is a backend project built with Spring Boot and MySQL. It provides REST APIs for managing students (add, update, delete, fetch).
+A full-stack student management application built with Spring Boot, H2 Database, and React.
 
---Features--
+---
 
-Java + Spring Boot
+## Tech Stack
 
-REST APIs
+- **Backend:** Java 17, Spring Boot 3, Spring Data JPA, Hibernate, Maven
+- **Database:** H2 In-Memory Database
+- **Frontend:** React, Vite, JavaScript
+- **API Architecture:** RESTful Web Services
 
-MySQL Database
+---
 
-JPA dependencies
+## Features
 
-CRUD operations
+- Student profile registration with image upload support
+- Retrieve all student records or query by ID
+- Update student details and photo attachments
+- Delete student records
+- Built-in H2 Database console for inspection
 
---Requirements--
+---
 
-Before running the project, make sure you have:
+## Configuration
 
-Java 17+
+### Database Configuration
 
-Maven
+The application is configured to use an embedded H2 in-memory database. Settings are defined in `src/main/resources/application.properties`:
 
-MySQL 8+
+```properties
+spring.application.name=Mohi
 
---Database Setup--
+# H2 Database
+spring.datasource.url=jdbc:h2:mem:studentdb
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
 
-Install MySQL and create a new database:
-
-CREATE DATABASE mydb;
-
-Update src/main/resources/application.properties with your MySQL username & password:
-
-spring.datasource.url=jdbc:mysql://localhost:3306/mydb 
-spring.datasource.username=your_username 
-spring.datasource.password=your_password 
+# JPA / Hibernate
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
 
-Replace your_username and your_password with your local MySQL credentials.
+# H2 Console
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+```
 
---Run the Project--
+---
 
-Using Maven:
+## Build and Run
 
-mvn spring-boot:run
+### Backend
 
-The application will start at: http://localhost:8080
+```bash
+mvn clean spring-boot:run
+```
 
-API Endpoints (Examples)
+- API Base Path: `/api`
+- H2 Console: `/h2-console` (JDBC URL: `jdbc:h2:mem:studentdb`, Username: `sa`, Password: *blank*)
 
-GET /students → Get all students
+### Frontend
 
-POST /students → Add new student
-
-PUT /students/{id} → Update student
-
-DELETE /students/{id} → Delete student
-
-Run the Backend
-
-Using Maven:
-
-mvn spring-boot:run
-
-
-Backend will start at  http://localhost:8080
-
----Run the Frontend
-
-Navigate to the frontend folder:
-
+```bash
 cd Frontend
-
-
-Install dependencies:
-
 npm install
-
-
-Start the frontend server:
-
 npm run dev
+```
 
+---
 
-Frontend will run at  http://localhost:3000
+## API Reference
 
---Author
+| Method | Endpoint | Description | Content Type |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/students` | Retrieve all students | `application/json` |
+| `GET` | `/api/student/{id}` | Retrieve student by ID | `application/json` |
+| `POST` | `/api/student` | Create new student | `multipart/form-data` |
+| `PUT` | `/api/student/{id}/update` | Update existing student | `multipart/form-data` |
+| `DELETE` | `/api/students/{id}` | Delete student by ID | `application/json` |
+| `GET` | `/api/student/{id}/image` | Retrieve student image | `image/*` |
+
+---
+
+## Author
 
 Mohi Ud Din
